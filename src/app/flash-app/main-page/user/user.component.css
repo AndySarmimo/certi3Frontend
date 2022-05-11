@@ -1,0 +1,17 @@
+#boxSession{
+    width: 40%;
+    border: 2px solid #4f4747;
+    background-color: #ebebde;
+    padding: 10px;
+}
+input{
+    width: 100%;
+    height: 90%;
+}
+.btn{
+    border: 2px solid #4f4747;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: #ebebde;
+    
+}

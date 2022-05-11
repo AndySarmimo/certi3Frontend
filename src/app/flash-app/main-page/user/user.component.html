@@ -1,0 +1,63 @@
+<div class="container-fluid" id="boxSession">
+
+
+        <div class="row" >
+            <h4 class="title" *ngIf="!varCrearCuenta">Inicio Sesion:</h4>
+            <h4 class="title" *ngIf="varCrearCuenta">Crear Cuenta:</h4>
+        </div>
+        <hr>
+       
+        <div class="row" *ngIf="varCrearCuenta">
+            <div class="col-md-4">
+                <h4>Nombre:</h4>
+            </div>
+            <div class="col-md-8">
+                    <input type="email" [(ngModel)]="name" >
+            </div>
+        </div>
+        <div class="row" *ngIf="varCrearCuenta">
+            <div class="col-md-4">
+                <h4>Apellido:</h4>
+            </div>
+            <div class="col-md-8">
+                    <input type="email" [(ngModel)]="lastName" >
+            </div>
+        </div>
+        <div class="row " >
+            <div class="col-md-4">
+                <h4>Email:</h4>
+            </div>
+            <div class="col-md-8">
+                    <input type="email" [(ngModel)]="emailPerson" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h4>Password:</h4>
+    
+            </div>
+            <div class="col-md-8">
+                <input type="password" [(ngModel)]="pwdPerson">
+            </div>
+        </div>
+        <div class="row" *ngIf="varCrearCuenta">
+            <div class="col-md-4">
+                <h4>Confirmar password:</h4>
+            </div>
+            <div class="col-md-8">
+                <input type="password" [(ngModel)]="pwdPerson2">
+            </div>
+        </div>
+        <div class="botones">
+            <hr>
+            <button class="btn" (click)="iniciarSesion();" *ngIf="!varCrearCuenta">Iniciar Sesion</button>
+            <button class="btn" (click)="crearCuenta();">Crear Cuenta</button>
+            <button class="btn" (click)="cancelarCrearCuenta();" *ngIf="varCrearCuenta">Cancelar</button>
+        </div>
+    
+    
+</div>
+  
+
+
+

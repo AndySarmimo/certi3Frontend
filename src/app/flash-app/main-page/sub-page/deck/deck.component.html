@@ -1,0 +1,68 @@
+
+<div class="container-fluid">
+
+    <div class="row">
+        <h2>Crear deck:</h2>
+    </div>
+    <div class="row">
+
+        <div class="col-md-3">
+            <h4>Ingrese nombre:</h4>
+        </div>
+        <div class="col-md-4">
+            <input class="obj-90" type="text" [(ngModel)]="nameDeck" >
+        </div>
+        <div class="col-md-4">
+                <button class="obj-40" (click)="crearDeck()"> Crear Deck </button>
+        </div>
+    
+    </div>
+    
+    <hr>
+    
+    <div class="row">
+        <h2>Ver decks:</h2>
+    </div>
+    <div class="row table-div">
+        <app-reusable-table 
+        [datos]="infoDeck"
+        [columnas]="columnsDeck" 
+        colorLetra="black" 
+        [nombreBotones]="nameButtons" 
+        (parentMethod)="functionTable($event)">
+        </app-reusable-table>
+    </div>
+
+ 
+
+
+</div>
+<jw-modal id="modal-edicion">
+    <div class="row">
+
+       
+            <h4>Ingrese nuevo nombre:</h4>
+        </div>
+
+        <div class="row">
+        
+            <input class="obj-90" type="text" [(ngModel)]="nameDeckEdicion" >
+        </div>
+        <div class="row">
+       
+                <button class="obj-40" (click)="actualizarDeck()"> Confirmar Cambio </button>
+                <button class="obj-40" (click)="cancelarModal()"> Cancelar </button>
+        </div>
+    
+   
+</jw-modal>
+<jw-modal id="modal-delete">
+    <div class="row">
+
+            <h4>Seguro que desea eliminar:</h4>
+        </div>
+        <div class="row"> 
+                <button class="obj-40" (click)="eliminarDeck()"> SI </button>
+                <button class="obj-40" (click)="cancelarModal()"> Cancelar </button>
+    </div>
+</jw-modal>
