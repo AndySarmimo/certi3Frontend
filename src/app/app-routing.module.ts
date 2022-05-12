@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: UserComponent},
   { path: 'home' , component: SubPageComponent ,
   children:[
-    {path: '', redirectTo: 'study', pathMatch: 'full'},
+    {path: '', redirectTo: 'flashcard', pathMatch: 'full'},
     { path: 'study', component: StudyComponent},
     { path: 'deck', component: DeckComponent},
     { path: 'flashcard', component: FlashcardComponent},

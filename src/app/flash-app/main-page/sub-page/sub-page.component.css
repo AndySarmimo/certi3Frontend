@@ -1,0 +1,14 @@
+button{
+    width: 100%;
+}
+
+#sub-con{
+    border: 1px solid black;
+    border-radius: 7px;
+    width: 90%;
+    height: 100%;
+}
+
+#sub-con2{
+    height: 100%;
+}

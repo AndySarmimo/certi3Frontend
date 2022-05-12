@@ -1,1 +1,79 @@
-<p>flashcard works!</p>
+<div class="container-fluid">
+
+    <div class="row">
+        <h2>Crear deck:</h2>
+    </div>
+    <div class="row">
+            <button class="obj-40" (click)="crearFlashcard()"> Crear Flashcard </button>
+    </div>
+    
+    <hr>
+    <div class="row">
+        <h2>Seleccione Deck:</h2>
+    </div>
+
+    <div class="row">
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="deckNameSeleccionado" (ngModelChange)="cambiarDeck()">
+            <option *ngFor="let n of this.sessionService.deckList">{{n.deckName}}</option>
+        </select>
+    </div>
+
+
+    <div class="row">
+        <h2>Ver Flashcards:</h2>
+    </div>
+    <div class="row table-div">
+        <app-reusable-table 
+        [datos]="infoFlash"
+        [columnas]="columnsFlash" 
+        colorLetra="black" 
+        [nombreBotones]="nameButtons" 
+        (parentMethod)="functionTable($event)">
+        </app-reusable-table>
+    </div>
+
+</div>
+<jw-modal id="modal-crear-editar-f">
+        <div class="row">
+
+            <h4>Ingrese front side:</h4>
+        </div>
+
+        <div class="row">
+            <textarea class="obj-90" type="text" [(ngModel)]="frontF" ></textarea>
+        </div>
+        <div class="row">
+
+            <h4>Ingrese back side:</h4>
+        </div>
+
+        <div class="row">
+            <textarea class="obj-90" type="text" [(ngModel)]="backF"></textarea>
+        </div>
+
+        <div class="row">
+            <h2>Seleccione Deck:</h2>
+        </div>
+    
+        <div class="row">
+            <select class="form-select" aria-label="Default select example" [(ngModel)]="deckNameSeleccionado2" (ngModelChange)="guardarDeck()">
+                <option *ngFor="let n of this.sessionService.deckList">{{n.deckName}}</option>
+            </select>
+        </div>
+
+        <div class="row">    
+                <button class="obj-40" (click)="actualizarCrearFlashcard(this.accionF)"> {{accionF}} </button>
+                <button class="obj-40" (click)="cancelarModal()"> Cancelar </button>
+        </div>
+    
+   
+</jw-modal>
+<jw-modal id="modal-delete-f">
+    <div class="row">
+            <h4>Seguro que desea eliminar:</h4>
+        </div>
+        <div class="row"> 
+                <button class="obj-40" (click)="eliminarFlashcard()"> SI </button>
+                <button class="obj-40" (click)="cancelarModal()"> Cancelar </button>
+    </div>
+</jw-modal>

@@ -1,9 +1,15 @@
 nav{
 
     background-color:#4f4747 ;
-    color: blanchedalmond;
+    color: #ebebde;
+    margin-bottom: 4%;
 
 }
 h2{
     margin-left: 50px;
+}
+
+#nav-d{
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -1,1 +1,54 @@
-<p>study works!</p>
+<div class="container-fluid">
+
+<div class="row">
+    <h2>Seleccione Deck:</h2>
+</div>
+
+<div class="row">
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="deckNameSeleccionado" (ngModelChange)="cambiarDeck()">
+        <option *ngFor="let n of this.sessionService.deckList">{{n.deckName}}</option>
+    </select>
+</div>
+
+
+<div class="row line">
+    <h2>Ver Flashcards:</h2>
+</div>
+<p *ngIf= "sinFlash">SIN FLASCHCARDS EN ESTE DECK</p>
+<div class="row" *ngIf="!sinFlash">
+    <div class="card car-c">
+        <div class="card-body">
+            <div >
+                <p>
+                    {{this.frontSide }}
+                </p>
+            </div >
+            
+            <div *ngIf="visibleAns">
+                <hr>
+                {{this.backSide }}
+                
+            </div>
+        </div> 
+               
+        
+  </div>
+</div>
+
+<div class="row" *ngIf="!sinFlash">
+    <button class="obj-40" (click)="revelarF()" *ngIf="!visibleAns"> Revelar Respuesta </button>
+    <button class="obj-40" (click)="siguienteF()"> Siguiente </button>
+   
+    
+</div>
+<!-- <div class="row table-div">
+    <app-reusable-table 
+    [datos]="infoFlash"
+    [columnas]="columnsFlash" 
+    colorLetra="black" 
+    [nombreBotones]="nameButtons" 
+    (parentMethod)="functionTable($event)">
+    </app-reusable-table>
+</div> -->
+
+</div>
