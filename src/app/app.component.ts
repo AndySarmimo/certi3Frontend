@@ -14,6 +14,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
+
+  
     this.sevice.getPeople().subscribe((response) =>{
         console.log(response)
     },(error)=>{
